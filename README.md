@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
+# cit281-Lab7
+![Image](https://github.com/Ruichen11/cit281-lab7/blob/0f0c3b3144a5ba7452b890b3b89b918306f66c3e/roman-synkevych-vXInUOv1n84-unsplash.jpg)
 
-You can use the [editor on GitHub](https://github.com/Ruichen11/cit281-lab7/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Purpose of this lab:
+- Create an GitHub organization for the CIT minor
+- Practice with error handling using JavaScript
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Lab Code: 
+``` 
+class CustomerError extends Error {
+ // initialize the class 
+    constructor(args){
+        super(args);
+        this.message = 'Customer error';
+    }
 
-### Markdown
+    throwGenericErrror(){
+        throw new Error("Generic error");
+    }
+    throwCustomError(){
+        throw new CustomerError().message;
+    }
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+// initialize a CustomError obj
+const myError = new CustomerError();
 
-```markdown
-Syntax highlighted code block
+//try - catch - finally block  generic error 
+console.log("Force generic error");
+try{
+    console.log("Generic error try block");
+    myError.throwGenericErrror();
+} catch {
+    console.log("Generic error catch block");
+    console.log(myError.throwGenericErrror());
+} finally {
+    console.log("Generic error finally block");
+}
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+// using custom error 
+console.log("Force custom error");
+try{
+    console.log("Customer error try block");
+} catch {
+    console.log("Custom error catch block");
+    console.log(myError.throwCustomError());
+} finally {
+    console.log("custom error finally block");
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Ruichen11/cit281-lab7/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### What I learned: 
+- Learned how to create a GitHub repository 
+- Learned how to clone GitHub repository to local system
+- Practiced with Try...catch...finally..throw errors
