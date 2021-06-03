@@ -1,5 +1,5 @@
-# cit281-Lab7
-![Image](https://github.com/Ruichen11/cit281-lab7/blob/0f0c3b3144a5ba7452b890b3b89b918306f66c3e/roman-synkevych-vXInUOv1n84-unsplash.jpg)
+# CIT281 Lab-7
+![roman-synkevych-vXInUOv1n84-unsplash](https://user-images.githubusercontent.com/84296093/120626098-3062b800-c417-11eb-8c75-cdfe902cdb6b.jpg)
 
 Purpose of this lab:
 - Create an GitHub organization for the CIT minor
